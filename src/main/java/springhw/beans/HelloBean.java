@@ -1,10 +1,9 @@
-﻿package springhw.beans;
+package springhw.beans;
 
 public class HelloBean {
 	private String name;
 
-	//Конструктор
-
+	//Конструкторы
 	public HelloBean() {}
 
 	public HelloBean(String name) {
