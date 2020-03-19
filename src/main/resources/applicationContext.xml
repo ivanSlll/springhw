@@ -7,13 +7,24 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="factoryBean"
+          class="springhw.beans.factoryBean"
+          scope="singleton">
+    </bean>
+
     <bean id="firstBean"
-        class="springhw.beans.HelloBean">
+          class="springhw.beans.HelloBean"
+          scope="prototype"
+          factory-method="createBean"
+          factory-bean="factoryBean">
         <constructor-arg value="Spring - это интересно!"/>
     </bean>
 
     <bean id="printerBean"
-          class="springhw.beans.Printer">
+          class="springhw.beans.Printer"
+          scope="singleton"
+          factory-method="createPrint"
+          factory-bean="factoryBean">
     </bean>
 
 </beans>
